@@ -1,0 +1,9 @@
+{% extends 'marketingteam/smr_base.html' %}
+{% block marketingteam_content %}
+    <h1>DELETE {{ smr.first_namename }} {{ smr.last_name }}?</h1>
+    <form method="POST">
+    {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'marketingteam:detail' pk=smr.pk %}">Cancel</a>
+    </form>
+{% endblock %}

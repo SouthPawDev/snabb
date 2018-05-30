@@ -1,0 +1,9 @@
+{% extends 'franchises/franchise_base.html' %}
+{% block franchise_content %}
+    <h1>DELETE {{ franchise.name }}?</h1>
+    <form method="POST">
+    {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'franchises:detail' pk=franchise.pk %}">Cancel</a>
+    </form>
+{% endblock %}

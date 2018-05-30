@@ -1,0 +1,17 @@
+{% extends 'franchises/franchise_base.html' %}
+{% block franchise_content %}
+    <h1>Welcome to a list of all our Franchises</h1>
+    <ol>
+        <h1>{{ franchise_detail.name }}</h1>
+        <p>Address: {{ franchise_detail.location }}</p>
+        <p>Phone Number: {{ franchise_detail.phone_number }}</p>
+
+        <hr>
+        <p><a class="btn btn-primary" href="{% url 'franchises:list' %}">Go Back</a></p>
+
+        {% if user.is_superuser %}
+            <p><a class="btn btn-warning" href="{% url 'franchises:update' pk=franchise_detail.pk %}">Update</a> or <a class="btn btn-danger" href="{% url 'franchises:delete' pk=franchise_detail.pk %}">Delete</a></p>
+
+        {% endif %}
+    </ol>
+{% endblock %}

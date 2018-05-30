@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 {% load staticfiles %}
 <html lang="en">
 <head>
@@ -24,9 +23,10 @@
             <a class="navbar-brand" href="{% url 'home' %}">snabb</a>
             <form class="form-inline my-2 my-lg-0">
                 {% if user.is_authenticated %}
+                    <h5>you are logged in as {{ user.username }} . . . </h5>
                     <a class="btn btn-outline-info my-2 my-sm-0 signpubtn" href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
-                    <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}">Log In</a></li>
+                    <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}"><span class="glyphicons glyphicons-user"></span>Log In</a></li>
                     <a class="btn btn-outline-success my-2 my-sm-0 signpubtn" href="{% url 'accounts:signup' %}">Sign Up</a></li>
 
                 {% endif %}

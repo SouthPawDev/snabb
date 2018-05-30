@@ -1,0 +1,14 @@
+{% extends 'marketingteam/smr_base.html' %}
+{% block marketingteam_content %}
+    <h1>Welcome to a list of people Marketing Team</h1>
+    <ol>
+        {% for smr in smrs %}
+            <h2><li><a href="{{ smr.id }}">{{ smr.first_name }} {{ smr.last_name }}</a></li></h2>
+        {% endfor %}
+
+        {% if user.is_superuser %}
+            <p><a class="btn btn-success" href="{% url 'marketingteam:create' %}">Create New</a></p>
+
+        {% endif %}
+    </ol>
+{% endblock %}

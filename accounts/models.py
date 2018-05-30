@@ -1,4 +1,3 @@
-from django.db import models
 from django.contrib.auth import models as acc_models
 
 # Create your models here.

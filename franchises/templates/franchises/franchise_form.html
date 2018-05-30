@@ -1,0 +1,19 @@
+{% extends 'franchises/franchise_base.html' %}
+{% block franchise_content %}
+    <h1>
+        {% if not form.instace.pk %}
+            Create Franchise
+        {% else %}
+            Update Franchise
+        {% endif %}
+    </h1>
+
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit">
+
+    </form>
+
+
+{% endblock %}

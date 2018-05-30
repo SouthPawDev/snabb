@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
 
-class TestPage(TemplateView):
-    template_name = 'test.html'
+
+class IndexPage(TemplateView):
+    template_name = 'index.html'
 
 
 class ThanksPage(TemplateView):
@@ -9,4 +10,4 @@ class ThanksPage(TemplateView):
 
 
 class HomePage(TemplateView):
-    template_name = 'index.html'
+    template_name = 'home.html'

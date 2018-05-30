@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'accounts'
+    'accounts',
+    'franchises',
+    'marketingteam',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +126,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
-LOGIN_REDIRECT_URL = 'test'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'thanks'
+
+
+# MEDIA
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+

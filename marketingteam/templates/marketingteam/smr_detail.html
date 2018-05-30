@@ -1,0 +1,21 @@
+{% extends 'marketingteam/smr_base.html' %}
+{% block marketingteam_content %}
+    <h1>Welcome to a list of people Marketing Team</h1>
+    <ol>
+        <h1>{{ smr_detail.first_name }} {{ smr_detail.last_name }}</h1>
+
+        <!-- here comes the SMR pictures -->
+
+        <p>Phone Number: {{ smr_detail.phone_number }}</p>
+        <p>Franchise: {{ smr_detail.smr_franchise }}</p>
+        <p>Car: {{ smr_detail.smr_car }}</p>
+
+        <hr>
+        <p><a class="btn btn-primary" href="{% url 'marketingteam:list' %}">Go Back</a></p>
+
+        {% if user.is_superuser %}
+            <p><a class="btn btn-warning" href="{% url 'marketingteam:update' pk=smr_detail.pk %}">Update</a> or <a class="btn btn-danger" href="{% url 'marketingteam:delete' pk=smr_detail.pk %}">Delete</a></p>
+
+        {% endif %}
+    </ol>
+{% endblock %}

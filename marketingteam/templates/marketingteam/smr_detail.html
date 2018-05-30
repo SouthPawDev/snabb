@@ -1,12 +1,15 @@
 {% extends 'marketingteam/smr_base.html' %}
 {% block marketingteam_content %}
-    <h1>Welcome to a list of people Marketing Team</h1>
+    <h1>Marketing Team</h1>
+    <hr>
     <ol>
         <h1>{{ smr_detail.first_name }} {{ smr_detail.last_name }}</h1>
 
         <!-- here comes the SMR pictures -->
+    <img class="smrphoto" src="{{ smr_detail.smr_pic.url }}" style="height: 300px" width="20%">
 
         <p>Phone Number: {{ smr_detail.phone_number }}</p>
+        <p>Email: {{ smr_detail.email }}</p>
         <p>Franchise: {{ smr_detail.smr_franchise }}</p>
         <p>Car: {{ smr_detail.smr_car }}</p>
 

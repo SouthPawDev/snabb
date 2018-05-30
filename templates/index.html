@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Welcome to snabb{% endblock %}
 {% block content %}
-    <h1>Welcome to snabb</h1>
+    <div class="">
+        <h1>Welcome to snabb</h1>
 
-    <h2>Click to start</h2>
-    {% if user.is_authenticated %}
-        <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'home' %}"></span>home</a></li>
-    {% else %}
-        <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}"></span>Log In</a></li>
-    {% endif %}
+        <h2>Click to start</h2>
+        {% if user.is_authenticated %}
+            <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'home' %}"></span>home</a></li>
+        {% else %}
+            <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}"></span>Log In</a></li>
+        {% endif %}
+    </div>
 {% endblock %}

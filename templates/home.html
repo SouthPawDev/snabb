@@ -4,12 +4,23 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-    <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+    <h1 class="welcome-title">Welcome {{ user.first_name }} {{ user.last_name }}</h1>
 
+
+    <div class="jumbotron">
+        <h1>Simple Menu Navigation</h1>
+
+        <a href="{% url 'franchises:list' %}" class="btn">Franchises</a>
+        <a href="{% url 'marketingteam:list' %}" class="btn">Marketing Team</a>
+        <a href="#" class="btn">Office</a>
+        <a href="#" class="btn">Blank</a>
+
+        <a href="https://twitter.com/freshcontrast" target="_blank" class="footer">@FRESHCONTRAST</a>
+    </div>
 {% else %}
 
     <h1>Please, Log in!</h1>
-    <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}"></span>Log In</a></li>
+    <a class="btn btn-outline-primary my-2 my-sm-0 loginbtn" href="{% url 'accounts:login' %}">Log In</a>
 
 {% endif %}
 {% endblock %}

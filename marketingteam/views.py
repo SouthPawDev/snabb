@@ -6,22 +6,22 @@ from marketingteam import models
 
 
 class SmrListView(ListView):
-    context_object_name = 'marketingteam'
+    context_object_name = 'smrs'
     model = models.Smr
 
 
 class SmrDetailView(DetailView):
-    context_object_name = 'marketingteam_detail'
+    context_object_name = 'smr_detail'
     model = models.Smr
 
 
 class SmrCreateView(CreateView):
-    fields = ('smr_pic', 'first_name', 'last_name', 'phone_number', 'smr_franchise', 'smr_car')
+    fields = ('smr_pic', 'first_name', 'last_name', 'email', 'phone_number', 'smr_franchise', 'smr_car')
     model = models.Smr
 
 
 class SmrUpdateView(UpdateView):
-    fields = ('smr_pic', 'first_name', 'last_name', 'phone_number', 'smr_franchise', 'smr_car')
+    fields = ('smr_pic', 'first_name', 'last_name', 'email', 'phone_number', 'smr_franchise', 'smr_car')
     model = models.Smr
 
 

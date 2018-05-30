@@ -5,9 +5,10 @@ from franchises.models import Franchise
 
 
 class Smr(models.Model):
-    smr_pic = models.ImageField(upload_to='smr_pics', blank=True)
+    smr_pic = models.ImageField(default='default.png', upload_to='smr_pics', blank=True)
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
+    email = models.EmailField(max_length=256, null=True)
     phone_number = models.CharField(max_length=12)
     smr_franchise = models.ForeignKey(Franchise, related_name='smrs', on_delete='PROTECT')
     smr_car = models.CharField(max_length=256)

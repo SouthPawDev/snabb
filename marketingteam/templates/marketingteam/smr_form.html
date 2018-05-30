@@ -1,14 +1,14 @@
 {% extends 'marketingteam/smr_base.html' %}
 {% block marketingteam_content %}
     <h1>
-        {% if not form.instace.pk %}
+        {% if not smr.pk %}
             Create SMR
         {% else %}
             Update SMR
         {% endif %}
     </h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
         <input class="btn btn-primary" type="submit" value="Submit">

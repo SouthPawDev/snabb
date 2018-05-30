@@ -1,14 +1,18 @@
 {% extends 'franchises/franchise_base.html' %}
 {% block franchise_content %}
     <h1>Welcome to a list of all our Franchises</h1>
-    <ol>
+    <hr>
+    <ul>
         {% for franchise in franchises %}
             <h2><li><a href="{{ franchise.id }}">{{ franchise.name }}</a></li></h2>
         {% endfor %}
 
+
+    </ul>
+    <hr>
+        <p><a class="btn btn-primary" href="{% url 'home' %}">Go Back</a></p>
         {% if user.is_superuser %}
             <p><a class="btn btn-success" href="{% url 'franchises:create' %}">Create New</a></p>
 
         {% endif %}
-    </ol>
 {% endblock %}

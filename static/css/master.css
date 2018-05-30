@@ -1,0 +1,66 @@
+/* {
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+	-moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+*/
+.signupbtn{
+    margin: 10px;
+}
+
+body{
+    background: #bdc3c7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding:75px;
+  text-align:center;
+  font-family: 'Oswald', sans-serif;
+  margin-top: -50px;
+}
+
+h1{
+  color: #1d1d1d;
+  font-weight:100;
+}
+
+.btn{
+  color:#d6d6d6;
+  background:rgba(0, 0, 0, 0.5);
+  padding:10px 20px;
+  font-size:12px;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  border:none;
+  background:rgba(0, 0, 0, 0.4);
+  background:#fff;
+  /*padding:20px 20px; */
+  color:#1b1b1b;
+}
+
+.footer{
+  font-size:8px;
+  color:#fff;
+  clear:both;
+  display:block;
+  letter-spacing:5px;
+  border:1px solid #fff;
+  padding:5px;
+  text-decoration:none;
+  width:210px;
+  margin:auto;
+  margin-top:400px;
+}
+
+.welcome-title{
+    color: #d6d6d6;
+}
+
+ul {
+  list-style-type: none;
+}

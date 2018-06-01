@@ -1,0 +1,6 @@
+{% extends 'office/office_base.html' %}
+{% block office_content %}
+    <a href="{% url 'office:pm_list' %}" class="btn">Project Managers</a>
+    <a href="{% url 'office:apm_list' %}" class="btn">Assistant Project Managers</a>
+    <a href="#" class="btn">Front Desk</a>
+{% endblock %}

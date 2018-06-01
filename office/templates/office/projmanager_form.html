@@ -1,0 +1,19 @@
+{% extends 'office/office_base.html' %}
+{% block office_content %}
+    <h1>
+        {% if not projmanager.pk %}
+            Create Project Manager
+        {% else %}
+            Update Project Manager
+        {% endif %}
+    </h1>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit">
+
+    </form>
+
+
+{% endblock %}

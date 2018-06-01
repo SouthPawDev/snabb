@@ -1,0 +1,9 @@
+{% extends 'office/office_base.html' %}
+{% block office_content %}
+    <h1>DELETE {{ projmanager.first_namename }} {{ projmanager.last_name }}?</h1>
+    <form method="POST">
+    {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'office:pm_detail' pk=projmanager.pk %}">Cancel</a>
+    </form>
+{% endblock %}

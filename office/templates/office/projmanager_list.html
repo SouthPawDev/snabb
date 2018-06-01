@@ -1,0 +1,17 @@
+{% extends 'office/office_base.html' %}
+{% block office_content %}
+    <h1>Project Manager</h1>
+    <ul>
+        {% for projmanager in projmanagers %}
+            <h3><li><a href="{{ projmanager.id }}">{{ projmanager.first_name }} {{ projmanager.last_name }}</a></li></h3>
+        {% endfor %}
+
+
+    </ul>
+    <hr>
+        <p><a class="btn btn-primary" href="{% url 'office:office_index' %}">Go Back</a></p>
+        {% if user.is_superuser %}
+            <p><a class="btn btn-success" href="{% url 'office:pm_create' %}">Create New</a></p>
+
+        {% endif %}
+{% endblock %}

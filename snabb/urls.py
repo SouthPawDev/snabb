@@ -28,6 +28,7 @@ urlpatterns = [
     path('thanks/', views.ThanksPage.as_view(), name='thanks'),
     path('franchises/', include('franchises.urls', namespace='franchises')),
     path('marketingteam/', include('marketingteam.urls', namespace='smr')),
+    path('office/', include('office.urls', namespace='office')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

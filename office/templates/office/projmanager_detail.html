@@ -1,0 +1,24 @@
+{% extends 'office/office_base.html' %}
+{% block office_content %}
+    <h1>Project Managers</h1>
+    <hr>
+    <ol>
+        <h1>{{ projmanager_detail.first_name }} {{ projmanager_detail.last_name }}</h1>
+
+        <!-- here comes the SMR pictures -->
+    <img class="teampic" src="{{ projmanager_detail.pm_pic.url }}" style="height: 300px" width="20%">
+
+        <p>Phone Number: {{ projmanager_detail.phone_number }}</p>
+        <p>Email: {{ projmanager_detail.email }}</p>
+        <p>Franchise: {{ projmanager_detail.pm_franchise }}</p>
+        <p>Car: {{ projmanager_detail.pm_car }}</p>
+
+        <hr>
+        <p><a class="btn btn-primary" href="{% url 'office:pm_list' %}">Go Back</a></p>
+
+        {% if user.is_superuser %}
+            <p><a class="btn btn-warning" href="{% url 'office:pm_update' pk=projmanager_detail.pk %}">Update</a> or <a class="btn btn-danger" href="{% url 'office:pm_delete' pk=projmanager_detail.pk %}">Delete</a></p>
+
+        {% endif %}
+    </ol>
+{% endblock %}
